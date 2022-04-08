@@ -11,20 +11,20 @@ arr=[]
 dep=[]
 for i in range(n):
     x,y=input().split()
-    arr.append(x)
-    dep.append(y)
+    arr.append(int(x))
+    dep.append(int(y))
 arr.sort()
 dep.sort()
-c=0
-cur=0
+max1=0
+ans=0
 i,j=0,0
 while(i<n and j<n):
     if arr[i]<dep[j]:
-        cur+=1
+        ans+=1
         i+=1
     else:
-        cur-=1
+        ans-=1
         j+=1
-    if c<cur:
-        c=cur
-print(c)
+    if max1<ans:
+        max1=ans
+print(max1)
