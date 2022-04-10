@@ -7,17 +7,16 @@ Write your code in this editor and press "Run" button to execute it.
 '''
 
 n=int(input())
-start=[]
+time=[]
 for i in range(n):
     x,y=map(int,input().split())
-    start.append([x,y])
-l=sorted(start,key=lambda x:x[1])
-c=1
-j=1
-for i in range(1,n):
-    if l[i][0]>=l[j-1][1]:
-        c+=1
-        j+=1
-print(c)
-
+    time.append([x,y])
+l=sorted(time,key=lambda x:x[1])
+c=0
+ans=0
+for start,end in l:
+    if start>=c:
+        ans+=1
+        c=end
+print(ans)
 
